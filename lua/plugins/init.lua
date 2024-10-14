@@ -10,9 +10,9 @@ return {
     "neovim/nvim-lspconfig",
     config = function()
       require "configs.lspconfig"
+      require "configs.cmp".setup()
     end,
   },
-
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
   -- 	opts = {
