@@ -23,7 +23,7 @@ function options.setup()
 	vim.opt.clipboard = "unnamed,unnamedplus"
 	vim.opt.ignorecase = true
 	vim.g.mapleader = " "
-	vim.opt.listchars = { eol = ' ', tab = '→ ' }
+	vim.opt.listchars = { eol = "←", tab = '→ ' }
 	vim.opt.list = true
 end
 
