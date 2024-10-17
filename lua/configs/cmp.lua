@@ -7,7 +7,13 @@ cmp.setup {
         end,
     },
     mapping = {
-        ["<Tab>"] = cmp.mapping.confirm({ select = true }),
+		["<Tab>"] = function(fallback) -- force tabulation
+            if cmp.visible() then
+                cmp.close()
+            end
+            vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Tab>", true, false, true), "n", true)
+        end,
+        ["<S-Tab>"] = cmp.mapping.select_next_item(), -- shift + tab to select_next_item (ENTER to confirm)
     },
     sources = {
         { name = 'nvim_lsp' },
